@@ -1,0 +1,103 @@
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transportation Scheduler</title>
+
+    <!-- Bootstrap Links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+    <!-- Materialize Links -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	
+	<!-- CSS Links -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+
+    
+</head>
+<body>
+
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">TRANSPORT SCHEDULER</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#targetname">ENTER SCHEDULE</a></li>
+          </ul>
+        </div>
+    </nav>
+    
+    <div class="jumbotron">
+        <p id="jumbo-description">"WHETHER YOU RUN THE COMPANY OR NEED TO ORGANIZE YOUR OWN SCHEDULE, THE TRANSPORT SCHEDULER WILL KEEP YOU ON TRACK."</p>
+    </div>
+
+    <h3 id="schedule-title">CURRENT TRANSPORTATION SCHEDULE</h3>
+
+    <a name="targetname"></a>
+    <div class="current-schedule"> 
+        <div class="panel panel-default">
+                <table class="table highlight">
+                    <thead>
+                      <tr>
+                        <th>Transportation Name</th>
+                        <th>Destination</th>
+                        <th>Frequency (min)</th>
+                        <th>Next Arrival</th>
+                        <th>Minutes Away</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody">
+                      <!-- Table body goes here -->
+                    </tbody>
+                </table>
+        </div>
+    </div>
+
+    <a class="waves-effect waves-light btn clear-table" id="clear-btn"><i class="material-icons left">delete</i>clear schedule</a>
+    
+    <div class="row is-table-row" id="bottom-row">
+        <div class="col s4 transport-info" style="background-color: #EFEFEF">
+                <h1 class = "hide-on-med-and-down" id="testing">TRANSPORT INFO + TIME HERE</h1>
+        </div>
+        <div class="col s8 add-transport" style="background-color: #2D2D2D">
+            <form role="form" id="form">
+                <div class="form-group">
+                    <label for="transport-input" class="table-input">Transportation Name:</label>
+                    <input class="form-control input" id="transport-input" type="text" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination-input" class="table-input">Destination:</label>
+                    <input class="form-control input" id="destination-input" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="time-input" class="table-input">First Transportation Time (HH:mm - military time):</label>
+                    <input class="form-control input" id="time-input" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="frequency-input" class="table-input">Frequency (mins):</label>
+                    <input class="form-control input" id="frequency-input" type="number"></input>
+                </div>
+                <button class="btn btn-default" id="add-btn" type="submit"><i class="material-icons left">check</i>Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="page-footer">
+          <p id="footer-text">HAPPY RIDING!</p>
+    </footer>
+
+
+    <!-- JQUERY Link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- Firebase Link -->
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+
+    <!-- Javascript Link -->
+    <script src="javascript/transport.js"></script>
+
+</body>
+</html>
