@@ -1,94 +1,83 @@
     
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Transportation Scheduler</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Transportation Scheduler</title>
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    </head>
+    <body>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo">Train Scheduling</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#targetname">Enter Your Schedule</a></li>
+                </ul>
+            </div>
+        </nav>
     
-
-    
-</head>
-<body>
-
-    <nav>
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo">Train Scheduling</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#targetname">Enter Your Schedule</a></li>
-          </ul>
+        <div class="jumbotron">
+            <p id="jumbo-description">"We conduct our schedule so you don't derail yours."</p>
         </div>
-    </nav>
+
+        <h3 id="schedule-title">Current Train Schedule</h3>
+
+        <a name="targetname"></a>
+        <div class="current-schedule"> 
+            <div class="panel panel-default">
+                    <table class="table highlight">
+                        <thead>
+                        <tr>
+                            <th>Train Name</th>
+                            <th>Destination</th>
+                            <th>Frequency (min)</th>
+                            <th>Next Arrival</th>
+                            <th>Minutes Away</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            <!-- Inputs go here -->
+                        </tbody>
+                    </table>
+            </div>
+        </div>
     
-    <div class="jumbotron">
-        <p id="jumbo-description">"To help conduct your commit without derailing your time.</p>
-    </div>
-
-    <h3 id="schedule-title">Current Train Schedule</h3>
-
-    <a name="targetname"></a>
-    <div class="current-schedule"> 
-        <div class="panel panel-default">
-                <table class="table highlight">
-                    <thead>
-                      <tr>
-                        <th>Train Name</th>
-                        <th>Destination</th>
-                        <th>Frequency (min)</th>
-                        <th>Next Arrival</th>
-                        <th>Minutes Away</th>
-                      </tr>
-                    </thead>
-                    <tbody id="tbody">
-                      <!-- Table body goes here -->
-                    </tbody>
-                </table>
+        <div class="row is-table-row" id="bottom-row">
+            <div class="col s4 transport-info">
+                <h1 class = "hide-on-med-and-down" id="testing">Add Train Info Here! &#8594;</h1>
+            </div>
+            <div class="col s8 add-transport">
+                <form role="form" id="form">
+                    <div class="form-group">
+                        <label for="transport-input" class="table-input">Train Name:</label>
+                        <input class="form-control input" id="transport-input" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="destination-input" class="table-input">Destination:</label>
+                        <input class="form-control input" id="destination-input" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="time-input" class="table-input">First Train Time (HH:mm - military time):</label>
+                        <input class="form-control input" id="time-input" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="frequency-input" class="table-input">Frequency (mins):</label>
+                        <input class="form-control input" id="frequency-input" type="number"></input>
+                    </div>
+                    <button class="btn btn-default" id="add-btn" type="submit"><i class="material-icons left">Submit</button>
+                </form>
+            </div>
         </div>
-    </div>
-
-    <a class="waves-effect waves-light btn clear-table" id="clear-btn"><i class="material-icons left">delete</i>clear schedule</a>
-    
-    <div class="row is-table-row" id="bottom-row">
-        <div class="col s4 transport-info">
-                <h1 class = "hide-on-med-and-down" id="testing">TRANSPORT INFO + TIME HERE</h1>
-        </div>
-        <div class="col s8 add-transport">
-            <form role="form" id="form">
-                <div class="form-group">
-                    <label for="transport-input" class="table-input">Transportation Name:</label>
-                    <input class="form-control input" id="transport-input" type="text" required>
-                </div>
-                <div class="form-group">
-                    <label for="destination-input" class="table-input">Destination:</label>
-                    <input class="form-control input" id="destination-input" type="text">
-                </div>
-                <div class="form-group">
-                    <label for="time-input" class="table-input">First Transportation Time (HH:mm - military time):</label>
-                    <input class="form-control input" id="time-input" type="text">
-                </div>
-                <div class="form-group">
-                    <label for="frequency-input" class="table-input">Frequency (mins):</label>
-                    <input class="form-control input" id="frequency-input" type="number"></input>
-                </div>
-                <button class="btn btn-default" id="add-btn" type="submit"><i class="material-icons left">check</i>Submit</button>
-            </form>
-        </div>
-    </div>
-
-    <footer class="page-footer">
-          <p id="footer-text">HAPPY RIDING!</p>
-    </footer>
-
 
     <!-- JQUERY Link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -102,5 +91,5 @@
     <!-- Javascript Link -->
     <script src="assets/javascript/app.js"></script>
 
-</body>
+    </body>
 </html>

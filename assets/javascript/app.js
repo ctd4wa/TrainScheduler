@@ -48,16 +48,16 @@ database.ref().on("child_added", function(snapshot) {
     var firstTimeConverted = moment(firstTransport, "hh:mm").subtract(1, "years");
     console.log(firstTimeConverted);
     var currentTime = moment();
-    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+    console.log("The current time is: " + moment(currentTime).format("hh:mm"));
     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-    console.log("DIFFERENCE IN TIME: " + diffTime);
+    console.log("The time remainder: " + diffTime);
     var tRemainder = diffTime % frequency;
     console.log(tRemainder);
     var tMinutesTillTrain = frequency - tRemainder;
-    console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+    console.log("Minutes until next train: " + tMinutesTillTrain);
     var nextTrain = moment().add(tMinutesTillTrain, "minutes");
     nextTrain = moment(nextTrain).format("hh:mm");
-    console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+    console.log("Arrives: " + moment(nextTrain).format("hh:mm"));
 
 
     $("#tbody").append("<tr> <td>" + transportation + "</td><td>" + destination + "</td><td>" + frequency + " mins</td><td>" + nextTrain + "</td><td>" + tMinutesTillTrain+ " mins</td>");

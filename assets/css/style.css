@@ -1,0 +1,17 @@
+.nav-wrapper {
+    background-color: maroon;
+    text-align: left;
+}
+
+#jumbo-description {
+    text-align: center;
+    font-size: 48px;
+}
+
+#add-btn {
+    background-color: navy;
+}
+
+.table-input {
+    color: black;
+}
