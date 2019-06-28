@@ -1,14 +1,15 @@
 //Initialize Firebase
-var config = {
-    apiKey: "AIzaSyBezf79yaQQKYyC4Mz-wFCmtqccu_H4Acw",
-    authDomain: "transportation-scheduler.firebaseapp.com",
-    databaseURL: "https://transportation-scheduler.firebaseio.com",
-    projectId: "transportation-scheduler",
-    storageBucket: "transportation-scheduler.appspot.com",
-    messagingSenderId: "245818533501"
-};
-
-firebase.initializeApp(config);
+var firebaseConfig = {
+    apiKey: "AIzaSyB-BdS8pNFP387fdnutOwwOs2SLMJtWSxU",
+    authDomain: "idkman-12404.firebaseapp.com",
+    databaseURL: "https://idkman-12404.firebaseio.com",
+    projectId: "idkman-12404",
+    storageBucket: "",
+    messagingSenderId: "693184974943",
+    appId: "1:693184974943:web:ef3513d71cd7f02e"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
 //Variables
 var database = firebase.database();
