@@ -6,6 +6,13 @@
 
 - The website allows the user to input new train schedules and the table will append to track the various options.
 
-- Technologies Utilized: HTML CSS Bootstrap Materialize JQuery Javascript Moment.JS
+- Technologies Utilized: 
+  -HTML 
+  -CSS 
+  -Bootstrap 
+  -Materialize 
+  -JQuery 
+  -Javascript 
+  -Moment.JS
 
 https://ctd4wa.github.io/TrainScheduler/
