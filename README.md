@@ -1,11 +1,20 @@
-# TrainScheduler
+# Train Scheduler
 
-- Created a train schedule application that incorporates Firebase to host data for each train.
+## Overview
+- This is a web application that tracks trains from user input.
+
+- Each scheduled time and destination is persisted through Google Firebase technology
 
 - In order to make the app usable for consumers, Moment.js is used to give manipulate values in real time.
 
-- The website allows the user to input new train schedules and the table will append to track the various options.
 
-- Technologies Utilized: HTML CSS Bootstrap Materialize JQuery Javascript Moment.JS
+## Technologies Utilized 
+  - HTML 
+  - CSS 
+  - Bootstrap 
+  - Materialize 
+  - JQuery 
+  - Javascript 
+  - Moment.JS
 
 https://ctd4wa.github.io/TrainScheduler/
