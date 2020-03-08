@@ -1,6 +1,18 @@
+*{
+    margin: 0px 5px 0px 5px;
+}
+
+nav {
+    background-color: #014bb1;
+}
+
 .nav-wrapper {
-    background-color: maroon;
+    background-color: #014bb1;
     text-align: left;
+}
+
+a:hover {
+    color: white;
 }
 
 #jumbo-description {
@@ -8,8 +20,12 @@
     font-size: 36px;
 }
 
+#schedule-title {
+    text-align: center;
+}
+
 #add-btn {
-    background-color: navy;
+    background-color: #014bb1;
 }
 
 .table-input {
